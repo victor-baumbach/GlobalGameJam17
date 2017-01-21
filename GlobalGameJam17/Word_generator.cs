@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Object;
-using System.Random;
+//using System.Object;
+//using System.Random;
 
 namespace GlobalGameJam17
 {
     class Word_generator
     {
-        const Random random = new Random();
-
-        char GenerateChar()
+        public static char GenerateChar()
         {
-            int randomNumber = random.Next(0, 9);
+            Random random = new Random();
+            int randomNumber = random.Next(9);
             char[] words = {'G', 'T', 'P', 'M', 'S', 'F', 'H', 'E', 'A', 'D'};
             Console.WriteLine("The Letter is ", words[randomNumber]);
             return words[randomNumber];
