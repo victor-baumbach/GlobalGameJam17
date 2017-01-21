@@ -4,32 +4,16 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/wave.png</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/Text.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/A.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/B.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/C.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/D.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/E.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/F.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/H.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/I.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/J.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/K.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/L.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/M.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/N.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/O.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/P.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/Q.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/R.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/S.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/T.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/U.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/V.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/X.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/Y.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/Z.spritefont</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/W.spritefont</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/background.png</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/Button.jpg</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/Island.png</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/PirateShip.png</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/WaveSprite.png</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/exitSignH.tga</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/resumeSignH.tga</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/startSignH.tga</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/exitSignI.tga</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/resumeSignI.tga</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/startSignI.tga</File>
   </SourceFiles>
 </SourceFileCollection>

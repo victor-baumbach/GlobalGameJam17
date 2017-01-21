@@ -45,13 +45,21 @@ namespace GlobalGameJam17
 
             Rectangle mouseRectangle = new Rectangle(mouse.X, mouse.Y,  1, 1);
 
+
             if (mouseRectangle.Intersects(rectangle))
             {
                 //    if (colour.A == 255) down = false;
                 //    if (colour.A == 0) down = true;
                 //    if (down) colour.A += 3; else colour.A -= 3;
                 texture = hoveredTexture;
-                if (mouse.LeftButton == ButtonState.Pressed) isClicked = true;
+
+                if (mouse.LeftButton == ButtonState.Pressed)isClicked = true;
+
+
+                else
+                {
+                    isClicked = false;
+                }
             }
             else
             {
