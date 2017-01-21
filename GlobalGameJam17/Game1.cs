@@ -154,7 +154,6 @@ namespace GlobalGameJam17
                 case gameState.playing:
 
                     switch (currentPlayState)
-
                     {
                         case playState.viewing:
                             //The incorrect order of the wave is played. A suggestion as to how to do that would be to play the array alphabetically.
@@ -208,12 +207,11 @@ namespace GlobalGameJam17
                     }
 
                     break;
-                  case gameState.Exit:
+                case gameState.Exit:
 
                     Quit();
 
                     break;
-            }
             }
             
             base.Update(gameTime);
