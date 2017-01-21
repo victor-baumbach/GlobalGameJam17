@@ -1,21 +1,35 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region Using Statements
+using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+#endregion
 
 namespace GlobalGameJam17
 {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
+    /// 
+
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Texture2D background;
+
+        private SpriteFont font;
+        private int score = 0;
+        string word = "Y";
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+
         }
 
         /// <summary>
@@ -38,9 +52,13 @@ namespace GlobalGameJam17
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
+        
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            background = Content.Load<Texture2D>("wave");
+            font = Content.Load<SpriteFont>("Text");
 
             // TODO: use this.Content to load your game content here
+
         }
 
         /// <summary>
@@ -74,9 +92,13 @@ namespace GlobalGameJam17
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            Vector2 spritePosition = new Vector2(100, 100);
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+            spriteBatch.Draw(background, spritePosition, Color.White);
+            spriteBatch.DrawString(font, "Text", new Vector2(100, 100), Color.Black);
+            spriteBatch.DrawString(font, word, new Vector2(100, 150), Color.Black);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
