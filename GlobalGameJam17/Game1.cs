@@ -30,6 +30,8 @@ namespace GlobalGameJam17
         string word = "Y";
         const int levelSize = 5;
         char[] level = new char[levelSize];
+        char[] user = new char[levelSize];
+        int keyboardInputPossition = 0;
 
         //Screen adjustment 
         int screenWidth = 800, screenHeight =600;
@@ -58,9 +60,6 @@ namespace GlobalGameJam17
             // TODO: Add your initialization logic here
 
             base.Initialize();
-            const int levelSize = 5;
-            char[] level = new char[levelSize];
-
         }
 
         /// <summary>
@@ -143,6 +142,41 @@ namespace GlobalGameJam17
 
                     break;
             }
+
+            //handle user input
+            char characterInput = userInput.getKeyPress();
+            if (characterInput != ' ')
+            {
+                user[keyboardInputPossition] = characterInput;
+                keyboardInputPossition++;
+            }
+
+            //when the user is done inputting their solution (they have filled array 'user')
+            if (keyboardInputPossition + 1 == levelSize)
+            {
+                //test if the user's input matches the solution
+                bool testFailed = false;
+                int k = 0;
+                while (k < levelSize)
+                {
+                    if (level[k] != user[k])
+                    {
+                        //If there is an instance where the user's input does not match the correct response then the test is failed.
+                        testFailed = true;
+                        break;
+                    }
+                    k++;
+                }
+                if (testFailed)
+                {
+                    //Game Over
+                }
+                else
+                {
+                    //Win!
+                }
+            }
+            
 
             base.Update(gameTime);
         }
