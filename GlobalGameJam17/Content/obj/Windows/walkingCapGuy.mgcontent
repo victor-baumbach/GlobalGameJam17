@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/walkingCapGuy.png</SourceFile>
-  <SourceTime>2017-01-21T01:40:44.1305312+00:00</SourceTime>
+  <SourceTime>2017-01-21T02:28:27.4421106+00:00</SourceTime>
   <DestFile>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/bin/Windows/walkingCapGuy.xnb</DestFile>
-  <DestTime>2017-01-21T01:48:43.617171+00:00</DestTime>
+  <DestTime>2017-01-21T03:54:40.4352084+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

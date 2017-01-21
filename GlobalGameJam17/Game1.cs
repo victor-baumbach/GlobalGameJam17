@@ -128,9 +128,9 @@ namespace GlobalGameJam17
 
             // Draw the sprite.
             Vector2 pos;
-            pos.X = 100.0f;
-            pos.Y = 200.0f;
-            testSprite.Draw(gameTime, spriteBatch);
+            pos.X = 500.0f;
+            pos.Y = 250.0f;
+            testSprite.Draw(gameTime, spriteBatch, pos, SpriteEffects.None);
 
             spriteBatch.End();
             base.Draw(gameTime);
