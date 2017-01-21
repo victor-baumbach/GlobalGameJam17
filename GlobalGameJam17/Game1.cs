@@ -23,6 +23,8 @@ namespace GlobalGameJam17
         private SpriteFont font;
         private int score = 0;
         string word = "Y";
+        const int levelSize = 5;
+        char[] level = new char[levelSize];
 
         public Game1()
         {
@@ -43,6 +45,8 @@ namespace GlobalGameJam17
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            const int levelSize = 5;
+            char[] level = new char[levelSize];
         }
 
         /// <summary>
@@ -80,6 +84,20 @@ namespace GlobalGameJam17
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            bool generateLevel = true;
+
+            if (generateLevel == true)
+            {
+                for (int i = 0; i < levelSize; i++)
+                {
+                    level[i] = Word_generator.GenerateChar();
+                }
+            }
+            for (int j = 0; j < levelSize; j++)
+            {
+                Console.WriteLine(level);
+            }
+            Console.WriteLine();
             // TODO: Add your update logic here
 
             base.Update(gameTime);
