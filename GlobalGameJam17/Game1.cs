@@ -14,6 +14,7 @@ namespace GlobalGameJam17
         SpriteBatch spriteBatch;
         const int levelSize = 5;
         char[] level = new char[levelSize];
+        char[] user = new char[levelSize];
 
         public Game1()
         {
@@ -82,6 +83,16 @@ namespace GlobalGameJam17
             }
             Console.WriteLine();
             // TODO: Add your update logic here
+            int k = 0;
+            while (k < levelSize)
+            {
+                if (level[k] == user[k])
+                {
+                    k++;
+                    //Level succeed
+                }
+                //level failed
+            }
 
             base.Update(gameTime);
         }
