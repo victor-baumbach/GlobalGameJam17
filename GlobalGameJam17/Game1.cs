@@ -37,6 +37,8 @@ namespace GlobalGameJam17
         int screenWidth = 800, screenHeight =600;
         enum gameState { mainMenu, playing}
         gameState currentGameState = gameState.mainMenu;
+        enum playState { viewing, inputing, winning, loosing};
+        playState currentPlayState = playState.viewing;
 
         cButton btnPlay;
 
@@ -140,44 +142,59 @@ namespace GlobalGameJam17
 
                 case gameState.playing:
 
+                    switch (currentPlayState)
+                    {
+                        case playState.viewing:
+
+                            break;
+                        case playState.inputing:
+                            //handle user input
+                            char characterInput = userInput.getKeyPress();
+                            if (characterInput != ' ')
+                            {
+                                user[keyboardInputPossition] = characterInput;
+                                keyboardInputPossition++;
+                            }
+
+                            //when the user is done inputting their solution (they have filled array 'user')
+                            if (keyboardInputPossition + 1 == levelSize)
+                            {
+                                //test if the user's input matches the solution
+                                bool testFailed = false;
+                                int k = 0;
+                                while (k < levelSize)
+                                {
+                                    if (level[k] != user[k])
+                                    {
+                                        //If there is an instance where the user's input does not match the correct response then the test is failed.
+                                        testFailed = true;
+                                        break;
+                                    }
+                                    k++;
+                                }
+                                if (testFailed)
+                                {
+                                    //Game Over
+                                    currentPlayState = playState.loosing;
+                                }
+                                else
+                                {
+                                    //Win!
+                                    currentPlayState = playState.winning;
+                                }
+                            }
+                            break;
+                        case playState.loosing:
+
+                            break;
+                        case playState.winning:
+
+                            break;
+                    }
+
                     break;
             }
-
-            //handle user input
-            char characterInput = userInput.getKeyPress();
-            if (characterInput != ' ')
-            {
-                user[keyboardInputPossition] = characterInput;
-                keyboardInputPossition++;
-            }
-
-            //when the user is done inputting their solution (they have filled array 'user')
-            if (keyboardInputPossition + 1 == levelSize)
-            {
-                //test if the user's input matches the solution
-                bool testFailed = false;
-                int k = 0;
-                while (k < levelSize)
-                {
-                    if (level[k] != user[k])
-                    {
-                        //If there is an instance where the user's input does not match the correct response then the test is failed.
-                        testFailed = true;
-                        break;
-                    }
-                    k++;
-                }
-                if (testFailed)
-                {
-                    //Game Over
-                }
-                else
-                {
-                    //Win!
-                }
-            }
             
-
             base.Update(gameTime);
         }
 
