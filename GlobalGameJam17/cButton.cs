@@ -14,6 +14,8 @@ namespace GlobalGameJam17
     class cButton
     {
         Texture2D texture;
+        Texture2D  initialTexture;
+        Texture2D hoveredTexture;
         Vector2 position;
         Rectangle rectangle;
 
@@ -21,9 +23,10 @@ namespace GlobalGameJam17
 
         public Vector2 size;
 
-        public cButton(Texture2D newTexture, GraphicsDevice graphics)
+        public cButton(Texture2D firstTexture, Texture2D endTexture, GraphicsDevice graphics)
         {
-            texture = newTexture;
+            initialTexture = firstTexture;
+            hoveredTexture = endTexture;
             //ScreenW = 800, ScreenH = 600
             //ImgW = 100, ImgH = 20
             size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);
@@ -31,25 +34,35 @@ namespace GlobalGameJam17
 
         bool down;
         public bool isClicked;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mouse"></param>
         public void Update(MouseState mouse)
         {
             rectangle = new Rectangle((int)position.X, (int)position.Y,
                 (int)size.X, (int)size.Y);
 
             Rectangle mouseRectangle = new Rectangle(mouse.X, mouse.Y,  1, 1);
-            
-            if (mouseRectangle.Intersects (rectangle))
+
+            if (mouseRectangle.Intersects(rectangle))
             {
-                if (colour.A == 255) down = false;
-                if (colour.A == 0) down = true;
-                if (down) colour.A += 3; else colour.A -= 3;
-                if(mouse.LeftButton == ButtonState.Pressed) isClicked = true;
+                //    if (colour.A == 255) down = false;
+                //    if (colour.A == 0) down = true;
+                //    if (down) colour.A += 3; else colour.A -= 3;
+                texture = initialTexture;
+                if (mouse.LeftButton == ButtonState.Pressed) isClicked = true;
             }
-            else if (colour.A < 255)
+            else
             {
-                colour.A += 3;
-                isClicked = false;
+                texture = hoveredTexture;
             }
+
+            //else if (colour.A < 255)
+            //{
+            //    colour.A += 3;
+            //    isClicked = false;
+            //}
         }
         public void setPosition(Vector2 newPosition)
         {
