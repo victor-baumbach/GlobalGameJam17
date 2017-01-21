@@ -37,6 +37,8 @@ namespace GlobalGameJam17
         int screenWidth = 800, screenHeight =600;
         enum gameState { mainMenu, playing}
         gameState currentGameState = gameState.mainMenu;
+        enum playState { viewing, inputing, winning, loosing};
+        playState currentPlayState = playState.viewing;
 
         cButton btnPlay;
 
@@ -140,44 +142,62 @@ namespace GlobalGameJam17
 
                 case gameState.playing:
 
+                    switch (currentPlayState)
+                    {
+                        case playState.viewing:
+                            //The incorrect order of the wave is played. A suggestion as to how to do that would be to play the array alphabetically.
+                            break;
+                        case playState.inputing:
+                            //handle user input
+                            char characterInput = userInput.getKeyPress();
+                            if (characterInput != ' ')
+                            {
+                                user[keyboardInputPossition] = characterInput;
+                                keyboardInputPossition++;
+                            }
+
+                            //when the user is done inputting their solution (they have filled array 'user')
+                            if (keyboardInputPossition + 1 == levelSize)
+                            {
+                                //test if the user's input matches the solution
+                                bool testFailed = false;
+                                int k = 0;
+                                while (k < levelSize)
+                                {
+                                    if (level[k] != user[k])
+                                    {
+                                        //If there is an instance where the user's input does not match the correct response then the test is failed.
+                                        testFailed = true;
+                                        break;
+                                    }
+                                    k++;
+                                }
+                                if (testFailed)
+                                {
+                                    //Game Over
+                                    currentPlayState = playState.loosing;
+                                }
+                                else
+                                {
+                                    //Win!
+                                    currentPlayState = playState.winning;
+                                }
+                            }
+                            break;
+                        case playState.loosing:
+                            //The player looses a round, the mexicans should look unhappy/cross with the player for a brief period.
+                            //after a bit it should revert to the viewing playerState.
+                            break;
+                        case playState.winning:
+                            //The player successfully completes the round, the mexicans should cheer and score should be added to the score counter.
+                            //The player should progress to the next level. After the Mexicans give a fully animated complete wave to the player.
+                            //Maybe a new puzzle/level should be generated here as well while the mexicans smile at the player.
+                            break;
+                    }
+
                     break;
             }
-
-            //handle user input
-            char characterInput = userInput.getKeyPress();
-            if (characterInput != ' ')
-            {
-                user[keyboardInputPossition] = characterInput;
-                keyboardInputPossition++;
-            }
-
-            //when the user is done inputting their solution (they have filled array 'user')
-            if (keyboardInputPossition + 1 == levelSize)
-            {
-                //test if the user's input matches the solution
-                bool testFailed = false;
-                int k = 0;
-                while (k < levelSize)
-                {
-                    if (level[k] != user[k])
-                    {
-                        //If there is an instance where the user's input does not match the correct response then the test is failed.
-                        testFailed = true;
-                        break;
-                    }
-                    k++;
-                }
-                if (testFailed)
-                {
-                    //Game Over
-                }
-                else
-                {
-                    //Win!
-                }
-            }
             
-
             base.Update(gameTime);
         }
 
