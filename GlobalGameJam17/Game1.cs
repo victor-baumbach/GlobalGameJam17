@@ -108,15 +108,26 @@ namespace GlobalGameJam17
             }
             Console.WriteLine();
             // TODO: Add your update logic here
+            bool testFailed = false;
             int k = 0;
             while (k < levelSize)
             {
-                if (level[k] == user[k])
+                if (level[k] != user[k])
                 {
-                    k++;
                     //Level succeed
+                    testFailed = true;
+                    break;
                 }
                 //level failed
+                k++;
+            }
+            if (testFailed)
+            {
+                //Game Over
+            }
+            else
+            {
+                //Win!
             }
 
             base.Update(gameTime);
