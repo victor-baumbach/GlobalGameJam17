@@ -30,6 +30,7 @@ namespace GlobalGameJam17
         const int levelSize = 5;
         char[] level = new char[levelSize];
         char[] user = new char[levelSize];
+        int keyboardInputPossition = 0;
 
         public Game1()
         {
@@ -52,8 +53,6 @@ namespace GlobalGameJam17
             // TODO: Add your initialization logic here
 
             base.Initialize();
-            const int levelSize = 5;
-            char[] level = new char[levelSize];
         }
 
         /// <summary>
@@ -108,27 +107,41 @@ namespace GlobalGameJam17
             }
             Console.WriteLine();
             // TODO: Add your update logic here
-            bool testFailed = false;
-            int k = 0;
-            while (k < levelSize)
+
+            //handle user input
+            char characterInput = userInput.getKeyPress();
+            if (characterInput != ' ')
             {
-                if (level[k] != user[k])
+                user[keyboardInputPossition] = characterInput;
+                keyboardInputPossition++;
+            }
+
+            //when the user is done inputting their solution (they have filled array 'user')
+            if (keyboardInputPossition + 1 == levelSize)
+            {
+                //test if the user's input matches the solution
+                bool testFailed = false;
+                int k = 0;
+                while (k < levelSize)
                 {
-                    //Level succeed
-                    testFailed = true;
-                    break;
+                    if (level[k] != user[k])
+                    {
+                        //If there is an instance where the user's input does not match the correct response then the test is failed.
+                        testFailed = true;
+                        break;
+                    }
+                    k++;
                 }
-                //level failed
-                k++;
+                if (testFailed)
+                {
+                    //Game Over
+                }
+                else
+                {
+                    //Win!
+                }
             }
-            if (testFailed)
-            {
-                //Game Over
-            }
-            else
-            {
-                //Win!
-            }
+            
 
             base.Update(gameTime);
         }

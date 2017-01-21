@@ -13,7 +13,7 @@ namespace GlobalGameJam17
 {
     class userInput
     {
-        KeyboardState pressing;
+        static KeyboardState pressing;
         MouseState mousey;
         //put code here! ;)
         public Point mouseClick()
@@ -29,13 +29,13 @@ namespace GlobalGameJam17
             }
             return mousePossition;
         }
-        int updateInput()
+        static int updateInput()
         {
             //to-do
             pressing = Keyboard.GetState();
             return 0;
         }
-        public char getKeyPress()
+        public static char getKeyPress()
         {
             //to-do
             updateInput();
