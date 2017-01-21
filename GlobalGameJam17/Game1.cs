@@ -20,6 +20,9 @@ namespace GlobalGameJam17
 
         SpriteBatch spriteBatch;
         Texture2D background;
+        private Texture2D SpriteWalk;
+
+        animatedSpriteStrip testSprite;
 
         private SpriteFont font;
         private int score = 0;
@@ -31,7 +34,7 @@ namespace GlobalGameJam17
         {
             graphics = new GraphicsDeviceManager(this);
             //sets games window to full screen
-            graphics.IsFullScreen = true;
+            graphics.IsFullScreen = false;
             Content.RootDirectory = "Content";
 
 
@@ -61,6 +64,8 @@ namespace GlobalGameJam17
             // Create a new SpriteBatch, which can be used to draw textures.
         
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            Texture2D SpriteWalk = Content.Load<Texture2D>("walkingCapGuy");
+            testSprite = new animatedSpriteStrip(SpriteWalk, 0.1f, true);
             background = Content.Load<Texture2D>("wave");
             font = Content.Load<SpriteFont>("Text");
 
@@ -112,6 +117,7 @@ namespace GlobalGameJam17
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+
             GraphicsDevice.Clear(Color.CornflowerBlue);
             Vector2 spritePosition = new Vector2(100, 100);
             // TODO: Add your drawing code here
@@ -119,6 +125,13 @@ namespace GlobalGameJam17
             spriteBatch.Draw(background, spritePosition, Color.White);
             spriteBatch.DrawString(font, "Text", new Vector2(100, 100), Color.Black);
             spriteBatch.DrawString(font, word, new Vector2(100, 150), Color.Black);
+
+            // Draw the sprite.
+            Vector2 pos;
+            pos.X = 100.0f;
+            pos.Y = 200.0f;
+            testSprite.Draw(gameTime, spriteBatch);
+
             spriteBatch.End();
             base.Draw(gameTime);
         }
