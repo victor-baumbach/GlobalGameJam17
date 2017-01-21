@@ -153,36 +153,7 @@ namespace GlobalGameJam17
 
                 case gameState.playing:
 
-<<<<<<< HEAD
-                    break;
-
-                case gameState.Exit:
-
-                    Quit();
-
-                    break;
-            }
-
-            //handle user input
-            char characterInput = userInput.getKeyPress();
-            if (characterInput != ' ')
-            {
-                user[keyboardInputPossition] = characterInput;
-                keyboardInputPossition++;
-            }
-
-            //when the user is done inputting their solution (they have filled array 'user')
-            if (keyboardInputPossition + 1 == levelSize)
-            {
-                //test if the user's input matches the solution
-                bool testFailed = false;
-                int k = 0;
-                while (k < levelSize)
-                {
-                    if (level[k] != user[k])
-=======
                     switch (currentPlayState)
->>>>>>> origin/master
                     {
                         case playState.viewing:
                             //The incorrect order of the wave is played. A suggestion as to how to do that would be to play the array alphabetically.
@@ -234,6 +205,11 @@ namespace GlobalGameJam17
                             //Maybe a new puzzle/level should be generated here as well while the mexicans smile at the player.
                             break;
                     }
+
+                    break;
+                case gameState.Exit:
+
+                    Quit();
 
                     break;
             }
