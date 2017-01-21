@@ -157,3 +157,9 @@
 /processorParam:TextureFormat=Color
 /build:BabyShip.png
 
+#begin Can_Can.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Can_Can.mp3
+

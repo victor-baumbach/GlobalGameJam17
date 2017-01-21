@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
+
 #endregion
 
 namespace GlobalGameJam17
@@ -23,7 +26,7 @@ namespace GlobalGameJam17
 
         Texture2D Boat;
         Texture2D smallBoat;
-
+        Song song;
 
         private Texture2D Mexican;
         private animatedSpriteStrip mexicanWaver;
@@ -86,13 +89,15 @@ namespace GlobalGameJam17
             Boat = Content.Load<Texture2D>("PirateShip");
             smallBoat = Content.Load<Texture2D>("BabyShip");
             Mexican = Content.Load<Texture2D>("WaveSprite");
-            mexicanWaver = new animatedSpriteStrip(Mexican, 0.1f, true);
+            this.song = Content.Load<Song>("Can_Can");
+            mexicanWaver = new animatedSpriteStrip(Mexican, 0.0001f, true);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
 
+
             //sets games window to full screen 
             //graphics.IsFullScreen = true;
-         
+
             IsMouseVisible = true;
         
             btnPlay = new cButton(Content.Load<Texture2D>("startSignI"), Content.Load<Texture2D>("startSignH"), graphics.GraphicsDevice);
@@ -101,11 +106,21 @@ namespace GlobalGameJam17
             btnExit.setPosition(new Vector2(350, 525));
 
             // TODO: use this.Content to load your game content here
+            MediaPlayer.Play(song);
+            //  Uncomment the following line will also loop the song
+            //  MediaPlayer.IsRepeating = true;
+            MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
 
-           
 
             graphics.ApplyChanges();
 
+        }
+
+        void MediaPlayer_MediaStateChanged(object sender, System.EventArgs e)
+        {
+            // 0.0f is silent, 1.0f is full volume
+            MediaPlayer.Volume -= 0.1f;
+            MediaPlayer.Play(song);
         }
 
         /// <summary>
