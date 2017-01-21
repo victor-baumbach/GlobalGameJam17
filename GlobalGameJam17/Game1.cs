@@ -145,7 +145,7 @@ namespace GlobalGameJam17
                     switch (currentPlayState)
                     {
                         case playState.viewing:
-
+                            //The incorrect order of the wave is played. A suggestion as to how to do that would be to play the array alphabetically.
                             break;
                         case playState.inputing:
                             //handle user input
@@ -185,10 +185,13 @@ namespace GlobalGameJam17
                             }
                             break;
                         case playState.loosing:
-
+                            //The player looses a round, the mexicans should look unhappy/cross with the player for a brief period.
+                            //after a bit it should revert to the viewing playerState.
                             break;
                         case playState.winning:
-
+                            //The player successfully completes the round, the mexicans should cheer and score should be added to the score counter.
+                            //The player should progress to the next level. After the Mexicans give a fully animated complete wave to the player.
+                            //Maybe a new puzzle/level should be generated here as well while the mexicans smile at the player.
                             break;
                     }
 

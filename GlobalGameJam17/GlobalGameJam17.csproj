@@ -38,9 +38,14 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="animatedSpriteStrip.cs" />
+    <Compile Include="cButton.cs" />
+    <Compile Include="createLevel.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userInput.cs" />
+    <Compile Include="Word_generator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
