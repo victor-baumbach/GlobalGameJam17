@@ -14,6 +14,7 @@ namespace GlobalGameJam17
     /// </summary>
     /// 
 
+   
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
@@ -32,11 +33,17 @@ namespace GlobalGameJam17
         char[] user = new char[levelSize];
         int keyboardInputPossition = 0;
 
+        //Screen adjustment 
+        int screenWidth = 800, screenHeight =600;
+        enum gameState { mainMenu, playing}
+        gameState currentGameState = gameState.mainMenu;
+
+        cButton btnPlay;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            //sets games window to full screen
-            graphics.IsFullScreen = false;
+
             Content.RootDirectory = "Content";
 
 
@@ -62,7 +69,20 @@ namespace GlobalGameJam17
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
+            graphics.PreferredBackBufferWidth = screenWidth;
+            graphics.PreferredBackBufferHeight = screenHeight;
+
+            //sets games window to full screen
+            //graphics.IsFullScreen = true;
+
+            graphics.ApplyChanges();
+
+            IsMouseVisible = true;
         
+            btnPlay = new cButton(Content.Load<Texture2D>("Button"), graphics.GraphicsDevice);
+
+            btnPlay.setPosition(new Vector2(350, 300));
+
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Texture2D SpriteWalk = Content.Load<Texture2D>("walkingCapGuy");
             testSprite = new animatedSpriteStrip(SpriteWalk, 0.1f, true);
@@ -91,6 +111,7 @@ namespace GlobalGameJam17
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            MouseState mouse = Mouse.GetState();
 
             bool generateLevel = true;
 
@@ -107,6 +128,20 @@ namespace GlobalGameJam17
             }
             Console.WriteLine();
             // TODO: Add your update logic here
+           
+
+            switch (currentGameState)
+            {
+                case gameState.mainMenu:
+                    
+                    if(btnPlay.isClicked == true) currentGameState = gameState.playing; btnPlay.Update(mouse);
+
+                    break;
+
+                case gameState.playing:
+
+                    break;
+            }
 
             //handle user input
             char characterInput = userInput.getKeyPress();
@@ -152,23 +187,37 @@ namespace GlobalGameJam17
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            Vector2 spritePosition = new Vector2(100, 100);
-            // TODO: Add your drawing code here
+            GraphicsDevice.Clear(Color.CornflowerBlue);                
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-            spriteBatch.Draw(background, spritePosition, Color.White);
-            spriteBatch.DrawString(font, "Text", new Vector2(100, 100), Color.Black);
-            spriteBatch.DrawString(font, word, new Vector2(100, 150), Color.Black);
+            switch (currentGameState)
+            {
+                case gameState.mainMenu:
+                    spriteBatch.Draw(Content.Load<Texture2D>("background"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
+                    btnPlay.Draw(spriteBatch);
 
-            // Draw the sprite.
-            Vector2 pos;
-            pos.X = 500.0f;
-            pos.Y = 250.0f;
-            testSprite.Draw(gameTime, spriteBatch, pos, SpriteEffects.None);
+                    break;
 
+                case gameState.playing:
+                #region level
+                Vector2 spritePosition = new Vector2(100, 100);
+                // TODO: Add your drawing code here
+                spriteBatch.Draw(background, spritePosition, Color.White);
+                spriteBatch.DrawString(font, "Text", new Vector2(100, 100), Color.Black);
+                spriteBatch.DrawString(font, word, new Vector2(100, 150), Color.Black);
+
+                // Draw the sprite.
+                Vector2 pos;
+                pos.X = 500.0f;
+                pos.Y = 250.0f;
+                testSprite.Draw(gameTime, spriteBatch, pos, SpriteEffects.None);
+                #endregion
+                    break;
+            }
+            
             spriteBatch.End();
+
             base.Draw(gameTime);
+
         }
     }
 }
