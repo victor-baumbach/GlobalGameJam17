@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/wave.png</SourceFile>
-  <SourceTime>2017-01-20T22:23:28.1958536+00:00</SourceTime>
+  <SourceTime>2017-01-21T00:33:10.4182924+00:00</SourceTime>
   <DestFile>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/bin/Windows/wave.xnb</DestFile>
-  <DestTime>2017-01-20T23:11:48.8441039+00:00</DestTime>
+  <DestTime>2017-01-21T00:42:00.2363345+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
