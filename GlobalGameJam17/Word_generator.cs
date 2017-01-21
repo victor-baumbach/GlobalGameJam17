@@ -14,7 +14,7 @@ namespace GlobalGameJam17
         {
             Random random = new Random();
             int randomNumber = random.Next(9);
-            char[] words = {'G', 'T', 'P', 'M', 'S', 'F', 'H', 'E', 'A', 'D'};
+            char[] words = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
             Console.WriteLine("The Letter is ", words[randomNumber]);
             return words[randomNumber];
         }
