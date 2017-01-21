@@ -22,6 +22,8 @@ namespace GlobalGameJam17
         SpriteBatch spriteBatch;
 
         Texture2D Boat;
+        Texture2D smallBoat;
+
 
         private Texture2D Mexican;
         private animatedSpriteStrip mexicanWaver;
@@ -82,6 +84,7 @@ namespace GlobalGameJam17
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             Boat = Content.Load<Texture2D>("PirateShip");
+            smallBoat = Content.Load<Texture2D>("BabyShip");
             Mexican = Content.Load<Texture2D>("WaveSprite");
             mexicanWaver = new animatedSpriteStrip(Mexican, 0.1f, true);
             graphics.PreferredBackBufferWidth = screenWidth;
@@ -232,6 +235,8 @@ namespace GlobalGameJam17
                     spriteBatch.Begin();
                     spriteBatch.Draw(Content.Load<Texture2D>("Island"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
                     spriteBatch.Draw(Boat, new Rectangle(225, 150, 300, 300), Color.White);
+                    spriteBatch.Draw(smallBoat, new Rectangle(635, 300, 100, 100), Color.White);
+
                     btnPlay.Draw(spriteBatch);
                     btnExit.Draw(spriteBatch);
                     break;
