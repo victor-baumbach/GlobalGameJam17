@@ -14,8 +14,8 @@ namespace GlobalGameJam17
     class cButton
     {
         Texture2D texture;
-        Texture2D  initialTexture;
-        Texture2D hoveredTexture;
+        Texture2D  hoveredTexture;
+        Texture2D initialTexture;
         Vector2 position;
         Rectangle rectangle;
 
@@ -50,12 +50,12 @@ namespace GlobalGameJam17
                 //    if (colour.A == 255) down = false;
                 //    if (colour.A == 0) down = true;
                 //    if (down) colour.A += 3; else colour.A -= 3;
-                texture = initialTexture;
+                texture = hoveredTexture;
                 if (mouse.LeftButton == ButtonState.Pressed) isClicked = true;
             }
             else
             {
-                texture = hoveredTexture;
+                texture = initialTexture;
             }
 
             //else if (colour.A < 255)
