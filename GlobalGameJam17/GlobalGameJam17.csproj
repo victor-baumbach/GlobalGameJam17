@@ -50,10 +50,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\wave.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\A.spritefont" />
+    <None Include="Content\B.spritefont" />
+    <None Include="Content\C.spritefont" />
+    <None Include="Content\D.spritefont" />
+    <None Include="Content\E.spritefont" />
+    <None Include="Content\F.spritefont" />
+    <None Include="Content\H.spritefont" />
+    <None Include="Content\I.spritefont" />
+    <None Include="Content\J.spritefont" />
+    <None Include="Content\K.spritefont" />
+    <None Include="Content\L.spritefont" />
+    <None Include="Content\M.spritefont" />
+    <None Include="Content\N.spritefont" />
+    <None Include="Content\O.spritefont" />
+    <None Include="Content\P.spritefont" />
+    <None Include="Content\Q.spritefont" />
+    <None Include="Content\R.spritefont" />
+    <None Include="Content\S.spritefont" />
+    <None Include="Content\T.spritefont" />
+    <None Include="Content\Text.spritefont" />
+    <None Include="Content\U.spritefont" />
+    <None Include="Content\V.spritefont" />
+    <None Include="Content\W.spritefont" />
+    <None Include="Content\X.spritefont" />
+    <None Include="Content\Y.spritefont" />
+    <None Include="Content\Z.spritefont" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
