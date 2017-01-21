@@ -17,6 +17,7 @@ namespace GlobalGameJam17
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
+
         SpriteBatch spriteBatch;
         Texture2D background;
 
@@ -29,6 +30,8 @@ namespace GlobalGameJam17
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            //sets games window to full screen
+            graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
 
 
