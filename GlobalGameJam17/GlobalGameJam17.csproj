@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BabyShip.png" />
     <Content Include="Content\background.png" />
     <Content Include="Content\Button.jpg" />
     <Content Include="Content\Island.png" />
