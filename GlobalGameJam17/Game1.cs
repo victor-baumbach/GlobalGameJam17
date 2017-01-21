@@ -20,14 +20,14 @@ namespace GlobalGameJam17
         GraphicsDeviceManager graphics;
 
         SpriteBatch spriteBatch;
-        Texture2D background;
-        private Texture2D SpriteWalk;
 
-        animatedSpriteStrip testSprite;
+        Texture2D Boat;
 
-        private SpriteFont font;
+        private Texture2D Mexican;
+        private animatedSpriteStrip mexicanWaver;
+
+
         private int score = 0;
-        string word = "Y";
         const int levelSize = 5;
         char[] level = new char[levelSize];
         char[] user = new char[levelSize];
@@ -35,12 +35,13 @@ namespace GlobalGameJam17
 
         //Screen adjustment 
         int screenWidth = 800, screenHeight =600;
-        enum gameState { mainMenu, playing}
+        enum gameState { mainMenu, playing, Exit }
         gameState currentGameState = gameState.mainMenu;
         enum playState { viewing, inputing, winning, loosing};
         playState currentPlayState = playState.viewing;
 
         cButton btnPlay;
+        cButton btnExit;
 
         public Game1()
         {
@@ -57,12 +58,19 @@ namespace GlobalGameJam17
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
+         public void Quit()
+        {
+            this.Exit();
+        }
+
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
 
             base.Initialize();
         }
+
+      
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
@@ -71,27 +79,29 @@ namespace GlobalGameJam17
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            Boat = Content.Load<Texture2D>("PirateShip");
+            Mexican = Content.Load<Texture2D>("WaveSprite");
+            mexicanWaver = new animatedSpriteStrip(Mexican, 0.1f, true);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
 
-            //sets games window to full screen
+            //sets games window to full screen 
             //graphics.IsFullScreen = true;
-
-            graphics.ApplyChanges();
-
+         
             IsMouseVisible = true;
         
-            btnPlay = new cButton(Content.Load<Texture2D>("Button"), graphics.GraphicsDevice);
-
-            btnPlay.setPosition(new Vector2(350, 300));
-
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-            Texture2D SpriteWalk = Content.Load<Texture2D>("walkingCapGuy");
-            testSprite = new animatedSpriteStrip(SpriteWalk, 0.1f, true);
-            background = Content.Load<Texture2D>("wave");
-            font = Content.Load<SpriteFont>("Text");
+            btnPlay = new cButton(Content.Load<Texture2D>("startSignI"), Content.Load<Texture2D>("startSignH"), graphics.GraphicsDevice);
+            btnPlay.setPosition(new Vector2(350, 500));
+            btnExit= new cButton(Content.Load<Texture2D>("exitSignI"), Content.Load<Texture2D>("exitSignH"), graphics.GraphicsDevice);
+            btnExit.setPosition(new Vector2(350, 525));
 
             // TODO: use this.Content to load your game content here
+
+           
+
+            graphics.ApplyChanges();
 
         }
 
@@ -113,8 +123,8 @@ namespace GlobalGameJam17
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            MouseState mouse = Mouse.GetState();
-
+            
+            MouseState CurrentMouseState = Mouse.GetState();
             bool generateLevel = true;
 
             if (generateLevel == true)
@@ -136,7 +146,8 @@ namespace GlobalGameJam17
             {
                 case gameState.mainMenu:
                     
-                    if(btnPlay.isClicked == true) currentGameState = gameState.playing; btnPlay.Update(mouse);
+                    if(btnPlay.isClicked == true) currentGameState = gameState.playing; btnPlay.Update(CurrentMouseState);
+                    if (btnExit.isClicked == true) currentGameState = gameState.Exit; btnExit.Update(CurrentMouseState);
 
                     break;
 
@@ -196,6 +207,11 @@ namespace GlobalGameJam17
                     }
 
                     break;
+                case gameState.Exit:
+
+                    Quit();
+
+                    break;
             }
             
             base.Update(gameTime);
@@ -208,29 +224,29 @@ namespace GlobalGameJam17
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);                
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-            switch (currentGameState)
-            {
-                case gameState.mainMenu:
-                    spriteBatch.Draw(Content.Load<Texture2D>("background"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
-                    btnPlay.Draw(spriteBatch);
+            
 
+            switch (currentGameState)
+            {   
+                case gameState.mainMenu:
+                    spriteBatch.Begin();
+                    spriteBatch.Draw(Content.Load<Texture2D>("Island"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
+                    spriteBatch.Draw(Boat, new Rectangle(225, 150, 300, 300), Color.White);
+                    btnPlay.Draw(spriteBatch);
+                    btnExit.Draw(spriteBatch);
                     break;
 
                 case gameState.playing:
-                #region level
-                Vector2 spritePosition = new Vector2(100, 100);
-                // TODO: Add your drawing code here
-                spriteBatch.Draw(background, spritePosition, Color.White);
-                spriteBatch.DrawString(font, "Text", new Vector2(100, 100), Color.Black);
-                spriteBatch.DrawString(font, word, new Vector2(100, 150), Color.Black);
+                    spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+                    Vector2 pos;
+                    pos.X = 100.0f;
+                    pos.Y = 200.0f;
+                    mexicanWaver.Draw(gameTime, spriteBatch, pos, SpriteEffects.None);
 
-                // Draw the sprite.
-                Vector2 pos;
-                pos.X = 500.0f;
-                pos.Y = 250.0f;
-                testSprite.Draw(gameTime, spriteBatch, pos, SpriteEffects.None);
-                #endregion
+                    break;
+
+                case gameState.Exit:
+
                     break;
             }
             
