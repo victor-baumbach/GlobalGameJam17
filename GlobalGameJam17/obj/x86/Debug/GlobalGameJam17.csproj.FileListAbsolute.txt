@@ -35,3 +35,8 @@ C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Win
 C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\resumeSignI.xnb
 C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\startSignI.xnb
 C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\BabyShip.xnb
+C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\Can_Can.wma
+C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\Can_Can.xnb
+C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\gameBackground.xnb
+C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\title.xnb
+C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\walk-right.xnb
