@@ -22,7 +22,22 @@ namespace GlobalGameJam17
     {
         GraphicsDeviceManager graphics;
 
+        T[] InitializeArray<T>(int length) where T : new()
+        {
+            T[] array = new T[length];
+            for (int i = 0; i < length; ++i)
+            {
+                array[i] = new T();
+            }
 
+            return array;
+        }
+
+        private int score = 0;
+        const int levelSize = 5;
+        char[] level = new char[levelSize];
+        char[] user = new char[levelSize];
+        int keyboardInputPossition = 0;
         SpriteBatch spriteBatch;
 
         Texture2D Boat;
@@ -31,16 +46,8 @@ namespace GlobalGameJam17
         Song song;
 
 
-        private Texture2D Mexican;
-        private animatedSpriteStrip mexicanWaver;
-
-
-
-        private int score = 0;
-        const int levelSize = 5;
-        char[] level = new char[levelSize];
-        char[] user = new char[levelSize];
-        int keyboardInputPossition = 0;
+         Texture2D Mexican;
+        animatedSpriteStrip mexicanWaver;
 
         //Screen adjustment 
         int screenWidth = 800, screenHeight = 600;
@@ -95,7 +102,7 @@ namespace GlobalGameJam17
             Mexican = Content.Load<Texture2D>("WaveSprite");
             Title = Content.Load<Texture2D>("title");
             this.song = Content.Load<Song>("Can_Can");
-            mexicanWaver = new animatedSpriteStrip(Mexican, 0.00001f, true);
+            mexicanWaver = new animatedSpriteStrip(Mexican, 0.001f, true);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
 
@@ -260,15 +267,20 @@ namespace GlobalGameJam17
 
                     btnPlay.Draw(spriteBatch);
                     btnExit.Draw(spriteBatch);
+                    spriteBatch.End();
                     break;
 
                 case gameState.playing:
                     spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
                     spriteBatch.Draw(Content.Load<Texture2D>("gameBackground"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
-                    Vector2 pos;
-                    pos.X = 100.0f;
-                    pos.Y = 400.0f;
-                    mexicanWaver.Draw(gameTime, spriteBatch, pos, SpriteEffects.None);
+                    Vector2 pos1; pos1.X = 100.0f;  pos1.Y = 400.0f;
+                    Vector2 pos2; pos2.X = 100.0f; pos2.Y = 400.0f;
+                    Vector2 pos3; pos3.X = 100.0f; pos3.Y = 400.0f;
+                    Vector2 pos4; pos4.X = 100.0f; pos4.Y = 400.0f;
+                    Vector2 pos5; pos5.X = 100.0f; pos5.Y = 400.0f;
+
+                    mexicanWaver.Draw(gameTime, spriteBatch, pos1, SpriteEffects.None);
+                    spriteBatch.End();
 
                     break;
 
@@ -277,7 +289,7 @@ namespace GlobalGameJam17
                     break;
             }
             
-            spriteBatch.End();
+            
 
             base.Draw(gameTime);
 
