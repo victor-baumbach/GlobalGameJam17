@@ -28,6 +28,7 @@ namespace GlobalGameJam17
         // The actual cell being addressed at this GameTime (0... numCells-1) 
         private int myFrameIndex;
 
+
         // counts from 0 to everupwards as the object lives on
         private int myFrameCounter;
 
@@ -57,7 +58,7 @@ namespace GlobalGameJam17
 
 
             // Process passing time. ElapsedGameTime returns the amount of time elapsed since the last Update
-            elapsedFrameTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            elapsedFrameTime += (float)gameTime.ElapsedGameTime.Milliseconds;
             if (elapsedFrameTime > myFrameTime)
             {
                 // Advance the frame index; looping or clamping as appropriate.

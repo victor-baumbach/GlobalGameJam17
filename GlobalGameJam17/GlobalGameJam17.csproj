@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="animatedSpriteStrip.cs" />
     <Compile Include="cButton.cs" />
+    <Compile Include="PreciseTimer.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,11 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\BabyShip.png" />
-    <Content Include="Content\background.png" />
-    <Content Include="Content\Button.jpg" />
     <Content Include="Content\Can_Can.mp3" />
     <Content Include="Content\Island.png" />
     <Content Include="Content\PirateShip.png" />
+    <Content Include="Content\walk-right.png" />
     <Content Include="Content\WaveSprite.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
@@ -69,10 +69,12 @@
   <ItemGroup>
     <None Include="Content\exitSignH.tga" />
     <None Include="Content\exitSignI.tga" />
+    <None Include="Content\gameBackground.tga" />
     <None Include="Content\resumeSignH.tga" />
     <None Include="Content\resumeSignI.tga" />
     <None Include="Content\startSignH.tga" />
     <None Include="Content\startSignI.tga" />
+    <None Include="Content\title.tga" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
