@@ -34,3 +34,4 @@ C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\obj\x86
 C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\exitSignI.xnb
 C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\resumeSignI.xnb
 C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\startSignI.xnb
+C:\Users\samue\OneDrive\Documents\GitHub\GlobalGameJam17\GlobalGameJam17\bin\Windows\x86\Debug\Content\BabyShip.xnb
