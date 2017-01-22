@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="animatedSpriteStrip.cs" />
     <Compile Include="cButton.cs" />
+    <Compile Include="spriteScenePicker.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +59,9 @@
     <Content Include="Content\Button.jpg" />
     <Content Include="Content\Island.png" />
     <Content Include="Content\PirateShip.png" />
+    <Content Include="Content\Surprised.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\WaveSprite.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
