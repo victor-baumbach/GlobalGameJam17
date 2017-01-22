@@ -4,8 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/background.png</File>
-    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/Button.jpg</File>
     <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/Island.png</File>
     <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/PirateShip.png</File>
     <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/WaveSprite.png</File>
@@ -16,5 +14,9 @@
     <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/resumeSignI.tga</File>
     <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/startSignI.tga</File>
     <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/BabyShip.png</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/Can_Can.mp3</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/gameBackground.tga</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/title.tga</File>
+    <File>C:/Users/samue/OneDrive/Documents/GitHub/GlobalGameJam17/GlobalGameJam17/Content/walk-right.png</File>
   </SourceFiles>
 </SourceFileCollection>

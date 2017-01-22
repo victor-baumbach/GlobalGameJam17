@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
+
 #endregion
 
 namespace GlobalGameJam17
@@ -19,26 +22,37 @@ namespace GlobalGameJam17
     {
         GraphicsDeviceManager graphics;
 
-        SpriteBatch spriteBatch;
+        T[] InitializeArray<T>(int length) where T : new()
+        {
+            T[] array = new T[length];
+            for (int i = 0; i < length; ++i)
+            {
+                array[i] = new T();
+            }
 
-        Texture2D Boat;
-        Texture2D smallBoat;
-
-
-        private Texture2D Mexican;
-        private animatedSpriteStrip mexicanWaver;
-
+            return array;
+        }
 
         private int score = 0;
         const int levelSize = 5;
         char[] level = new char[levelSize];
         char[] user = new char[levelSize];
         int keyboardInputPossition = 0;
+        SpriteBatch spriteBatch;
+
+        Texture2D Boat;
+        Texture2D smallBoat;
+        Texture2D Title;
+        Song song;
+
+
+         Texture2D Mexican;
+        animatedSpriteStrip mexicanWaver;
 
         //Screen adjustment 
-        int screenWidth = 800, screenHeight =600;
+        int screenWidth = 800, screenHeight = 600;
         enum gameState { mainMenu, playing, Exit }
-        gameState currentGameState = gameState.mainMenu;
+        gameState currentGameState = gameState.playing;
         enum playState { viewing, inputing, winning, loosing};
         playState currentPlayState = playState.viewing;
 
@@ -93,13 +107,16 @@ namespace GlobalGameJam17
             Boat = Content.Load<Texture2D>("PirateShip");
             smallBoat = Content.Load<Texture2D>("BabyShip");
             Mexican = Content.Load<Texture2D>("WaveSprite");
-            mexicanWaver = new animatedSpriteStrip(Mexican, 0.1f, true);
+            Title = Content.Load<Texture2D>("title");
+            this.song = Content.Load<Song>("Can_Can");
+            mexicanWaver = new animatedSpriteStrip(Mexican, 0.001f, true);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
 
+
             //sets games window to full screen 
             //graphics.IsFullScreen = true;
-         
+
             IsMouseVisible = true;
         
             btnPlay = new cButton(Content.Load<Texture2D>("startSignI"), Content.Load<Texture2D>("startSignH"), graphics.GraphicsDevice);
@@ -108,11 +125,21 @@ namespace GlobalGameJam17
             btnExit.setPosition(new Vector2(350, 525));
 
             // TODO: use this.Content to load your game content here
+            MediaPlayer.Play(song);
+            //  Uncomment the following line will also loop the song
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
 
-           
 
             graphics.ApplyChanges();
 
+        }
+
+        void MediaPlayer_MediaStateChanged(object sender, System.EventArgs e)
+        {
+            // 0.0f is silent, 1.0f is full volume
+            MediaPlayer.Volume -= 0.1f;
+            MediaPlayer.Play(song);
         }
 
         /// <summary>
@@ -241,11 +268,13 @@ namespace GlobalGameJam17
                 case gameState.mainMenu:
                     spriteBatch.Begin();
                     spriteBatch.Draw(Content.Load<Texture2D>("Island"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
+                    spriteBatch.Draw(Title, new Rectangle(250, 25, 300, 300), Color.White);
                     spriteBatch.Draw(Boat, new Rectangle(225, 150, 300, 300), Color.White);
                     spriteBatch.Draw(smallBoat, new Rectangle(635, 300, 100, 100), Color.White);
 
                     btnPlay.Draw(spriteBatch);
                     btnExit.Draw(spriteBatch);
+                    spriteBatch.End();
                     break;
 
                 case gameState.playing:
@@ -271,6 +300,15 @@ namespace GlobalGameJam17
 
                             break;
                     }
+                    spriteBatch.Draw(Content.Load<Texture2D>("gameBackground"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
+                    Vector2 pos1; pos1.X = 100.0f;  pos1.Y = 400.0f;
+                    Vector2 pos2; pos2.X = 100.0f; pos2.Y = 400.0f;
+                    Vector2 pos3; pos3.X = 100.0f; pos3.Y = 400.0f;
+                    Vector2 pos4; pos4.X = 100.0f; pos4.Y = 400.0f;
+                    Vector2 pos5; pos5.X = 100.0f; pos5.Y = 400.0f;
+
+                    mexicanWaver.Draw(gameTime, spriteBatch, pos1, SpriteEffects.None);
+                    spriteBatch.End();
 
                     break;
 
@@ -279,7 +317,7 @@ namespace GlobalGameJam17
                     break;
             }
             
-            spriteBatch.End();
+            
 
             base.Draw(gameTime);
 
