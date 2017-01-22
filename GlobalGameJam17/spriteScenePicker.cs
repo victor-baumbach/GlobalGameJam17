@@ -11,15 +11,15 @@ namespace GlobalGameJam17
     class spriteScenePicker
     {
         //40-d0
-        float prieviousDraw;
-        float frameTimeGap;
+        static float prieviousDraw;
+        static float frameTimeGap;
 
-        public int initialize(float framerate)
+        public static int initialize(float framerate)
         {
             frameTimeGap = 1.0f / framerate;
             return 0;
         }
-        public int drawFrame(GameTime gameTime, SpriteBatch spriteBatch, Texture2D spriteSheet, Rectangle destinationRectangle, Rectangle sourceRectangle)
+        public static int drawFrame(GameTime gameTime, SpriteBatch spriteBatch, Texture2D spriteSheet, Rectangle destinationRectangle, Rectangle sourceRectangle)
         {            
             sourceRectangle = new Rectangle();
             if (gameTime.ElapsedGameTime.Milliseconds > prieviousDraw + frameTimeGap)
@@ -30,21 +30,21 @@ namespace GlobalGameJam17
             
             return 0;
         }
-        public Rectangle idleFrame(int size)
+        public static Rectangle idleFrame(int size)
         {
             int step = 1;
             Point location = new Point(size * step, 0);
             Rectangle sourceRectangle = new Rectangle(location, new Point(size));
             return sourceRectangle;
         }
-        public Rectangle handsInAirFrame(int size)
+        public static Rectangle handsInAirFrame(int size)
         {
             int step = 12;
             Point location = new Point(size*step, 0);
             Rectangle sourceRectangle = new Rectangle(location, new Point(size));
             return sourceRectangle;
         }
-        public int suprisedFrame()
+        public static int suprisedFrame()
         {
             return 0;
         }
