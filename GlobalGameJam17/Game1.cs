@@ -56,6 +56,13 @@ namespace GlobalGameJam17
         enum playState { viewing, inputing, winning, loosing};
         playState currentPlayState = playState.viewing;
 
+        Point mexicanPos1 = new Point(100, 300);
+        Point mexicanPos2 = new Point(200, 300);
+        Point mexicanPos3 = new Point(300, 300);
+        Point mexicanPos4 = new Point(400, 300);
+        Point mexicanPos5 = new Point(500, 300);
+        
+
         cButton btnPlay;
         cButton btnExit;
 
@@ -272,6 +279,27 @@ namespace GlobalGameJam17
 
                 case gameState.playing:
                     spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+                    Vector2 pos;
+                    pos.X = 100.0f;
+                    pos.Y = 200.0f;
+                    mexicanWaver.Draw(gameTime, spriteBatch, pos, SpriteEffects.None);
+                    switch (currentPlayState)
+                    {
+                        case playState.viewing:
+                            int height = Mexican.Height;
+                            Rectangle position1 = new Rectangle (mexicanPos1, new Point (50));
+                            Rectangle position2 = new Rectangle (mexicanPos2, new Point (50));
+                            Rectangle position3 = new Rectangle (mexicanPos3, new Point (50));
+                            Rectangle position4 = new Rectangle (mexicanPos4, new Point (50));
+                            Rectangle position5 = new Rectangle (mexicanPos5, new Point (50));
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position1, spriteScenePicker.handsInAirFrame(height));
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position2, spriteScenePicker.idleFrame(height));
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position3, spriteScenePicker.handsInAirFrame(height));
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position4, spriteScenePicker.idleFrame(height));
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position5, spriteScenePicker.handsInAirFrame(height));
+
+                            break;
+                    }
                     spriteBatch.Draw(Content.Load<Texture2D>("gameBackground"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
                     Vector2 pos1; pos1.X = 100.0f;  pos1.Y = 400.0f;
                     Vector2 pos2; pos2.X = 100.0f; pos2.Y = 400.0f;
