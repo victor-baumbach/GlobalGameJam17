@@ -15,5 +15,10 @@ namespace GlobalGameJam17
         {
             key = _key;
         }
+
+        public void Play()
+        {
+            //
+        }
     }
 }

@@ -21,5 +21,32 @@ namespace GlobalGameJam17
                 mexicans.Add(newMexican);
             }
         }
+
+        public bool isSolution(List<Keys> answer)
+        {
+            bool isEqual = true;
+            if(answer.Count == solution.Count)
+            {
+                if(solution.Equals(answer))
+                {
+                    isEqual = true;
+                }
+                else
+                {
+                    for (int i = 0; i < solution.Count; i++)
+                    {
+                        if (solution[i] != answer[i])
+                        {
+                            isEqual = false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                isEqual = false;
+            }
+            return isEqual;
+        }
     }
 }
