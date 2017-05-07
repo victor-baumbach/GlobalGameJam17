@@ -1,0 +1,5 @@
+/GlobalGameJam17/bin/*
+/GlobalGameJam17/GlobalGameJam17(ignore).csproj
+/.vs/*
+/GlobalGameJam17/obj/x86/*
+*.exe
