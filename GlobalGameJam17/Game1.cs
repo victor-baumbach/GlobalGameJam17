@@ -109,7 +109,7 @@ namespace GlobalGameJam17
             Mexican = Content.Load<Texture2D>("WaveSprite");
             Title = Content.Load<Texture2D>("title");
             this.song = Content.Load<Song>("Can_Can");
-            mexicanWaver = new animatedSpriteStrip(Mexican, 0.001f, true);
+            mexicanWaver = new animatedSpriteStrip(Mexican, 100f, false);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
 

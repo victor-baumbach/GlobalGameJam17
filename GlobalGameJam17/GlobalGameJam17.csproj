@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="animatedSpriteStrip.cs" />
     <Compile Include="cButton.cs" />
+    <Compile Include="Mexican.cs" />
     <Compile Include="PreciseTimer.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
@@ -60,15 +61,9 @@
     <Content Include="Content\Can_Can.mp3" />
     <Content Include="Content\Island.png" />
     <Content Include="Content\PirateShip.png" />
+    <Content Include="Content\Sprite.png" />
     <Content Include="Content\walk-right.png" />
     <Content Include="Content\WaveSprite.png" />
-    <Content Include="Content\background.png" />
-    <Content Include="Content\Button.jpg" />
-    <Content Include="Content\Surprised.png">
-    <Content Include="Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\exitSignH.tga" />
