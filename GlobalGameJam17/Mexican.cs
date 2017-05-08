@@ -66,7 +66,6 @@ class Mexican
     public void drawAnimation(GameTime gameTime, SpriteBatch spriteBatch, SpriteEffects spriteEffects)
     {
 
-
         // Process passing time. ElapsedGameTime returns the amount of time elapsed since the last Update
         elapsedFrameTime += (float)gameTime.ElapsedGameTime.Milliseconds;
         if (elapsedFrameTime > myFrameTime)
@@ -101,7 +100,6 @@ class Mexican
 
     public void drawStatic(SpriteBatch spriteBatch)
     {
-
         spriteBatch.Draw(staticSprite, temp, Color.White);
 
     }
