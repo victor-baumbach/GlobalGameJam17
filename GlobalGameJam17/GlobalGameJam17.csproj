@@ -41,6 +41,8 @@
     <Compile Include="animatedSpriteStrip.cs" />
     <Compile Include="cButton.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="LevelCharacter.cs" />
     <Compile Include="PreciseTimer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,19 +4,19 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/Island.png</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/PirateShip.png</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/WaveSprite.png</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/exitSignH.tga</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/resumeSignH.tga</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/startSignH.tga</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/exitSignI.tga</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/resumeSignI.tga</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/startSignI.tga</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/BabyShip.png</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/Can_Can.mp3</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/gameBackground.tga</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/title.tga</File>
-    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/GlobalGameJam17/Content/walk-right.png</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/Island.png</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/PirateShip.png</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/WaveSprite.png</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/exitSignH.tga</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/resumeSignH.tga</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/startSignH.tga</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/exitSignI.tga</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/resumeSignI.tga</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/startSignI.tga</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/BabyShip.png</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/Can_Can.mp3</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/gameBackground.tga</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/title.tga</File>
+    <File>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/walk-right.png</File>
   </SourceFiles>
 </SourceFileCollection>

@@ -13,6 +13,11 @@ namespace GlobalGameJam17
         public List<LevelCharacter> mexicans = new List<LevelCharacter>();
         List<char> solution;
 
+        public int getLength()
+        {
+            return mexicans.Count;
+        }
+
         public Level(List<char> problem, List<char> _solution)
         {
             solution = _solution;

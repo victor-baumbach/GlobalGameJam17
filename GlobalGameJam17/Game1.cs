@@ -38,6 +38,8 @@ namespace GlobalGameJam17
         char[] level = new char[levelSize];
         char[] user = new char[levelSize];
         List<Level> levels = new List<Level>();
+        int currentLevel = 0;
+        List<char> userSolution = new List<char>();
         int keyboardInputPossition = 0;
         SpriteBatch spriteBatch;
 
@@ -142,8 +144,6 @@ namespace GlobalGameJam17
             solution.Add('R');
             Level level1 = new Level(problem, solution);
             levels.Add(level1);
-            problem.Clear();
-            solution.Clear();
             problem = new List<char>();
             problem.Add('T');
             problem.Add('A');
@@ -240,26 +240,27 @@ namespace GlobalGameJam17
                             char characterInput = userInput.getKeyPress();
                             if (characterInput != ' ')
                             {
-                                user[keyboardInputPossition] = characterInput;
+                                userSolution.Add(characterInput);
                                 keyboardInputPossition++;
                             }
 
                             //when the user is done inputting their solution (they have filled array 'user')
-                            if (keyboardInputPossition + 1 == levelSize)
+                            if (userSolution.Count == levels[currentLevel].getLength())
                             {
                                 //test if the user's input matches the solution
                                 bool testFailed = false;
-                                int k = 0;
-                                while (k < levelSize)
-                                {
-                                    if (level[k] != user[k])
-                                    {
-                                        //If there is an instance where the user's input does not match the correct response then the test is failed.
-                                        testFailed = true;
-                                        break;
-                                    }
-                                    k++;
-                                }
+                                //int k = 0;
+                                //while (k < levelSize)
+                                //{
+                                //    if (level[k] != user[k])
+                                //    {
+                                //        //If there is an instance where the user's input does not match the correct response then the test is failed.
+                                //        testFailed = true;
+                                //        break;
+                                //    }
+                                //    k++;
+                                //}
+                                testFailed = levels[currentLevel].isSolution(userSolution);
                                 if (testFailed)
                                 {
                                     //Game Over
@@ -275,11 +276,16 @@ namespace GlobalGameJam17
                         case playState.loosing:
                             //The player looses a round, the mexicans should look unhappy/cross with the player for a brief period.
                             //after a bit it should revert to the viewing playerState.
+                            userSolution.Clear();
+                            currentPlayState = playState.viewing;
                             break;
                         case playState.winning:
                             //The player successfully completes the round, the mexicans should cheer and score should be added to the score counter.
                             //The player should progress to the next level. After the Mexicans give a fully animated complete wave to the player.
                             //Maybe a new puzzle/level should be generated here as well while the mexicans smile at the player.
+                            currentLevel++;
+                            userSolution.Clear();
+                            currentPlayState = playState.viewing;
                             break;
                     }
 
