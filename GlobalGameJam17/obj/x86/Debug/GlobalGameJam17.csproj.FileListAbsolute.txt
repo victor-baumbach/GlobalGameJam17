@@ -82,3 +82,4 @@ C:\Users\samue\Documents\PPM\GlobalGameJam17\bin\Windows\x86\Debug\SharpDX.XInpu
 C:\Users\samue\Documents\PPM\GlobalGameJam17\bin\Windows\x86\Debug\SharpDX.RawInput.xml
 C:\Users\samue\Documents\PPM\GlobalGameJam17\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\samue\Documents\PPM\GlobalGameJam17\obj\x86\Debug\GlobalGameJam17.csprojResolveAssemblyReference.cache
+C:\Users\samue\Documents\PPM\GlobalGameJam17\bin\Windows\x86\Debug\Content\Sprite.xnb
