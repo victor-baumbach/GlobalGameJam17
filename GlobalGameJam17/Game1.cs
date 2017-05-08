@@ -137,10 +137,10 @@ namespace GlobalGameJam17
             btnPlay.setPosition(new Vector2(350, 500));
             btnExit= new cButton(Content.Load<Texture2D>("exitSignI"), Content.Load<Texture2D>("exitSignH"), graphics.GraphicsDevice);
             btnExit.setPosition(new Vector2(350, 525));
-            one = new Mexican(staticImage, animatedImage, position2);
-            two = new Mexican(staticImage, animatedImage, position3);
-            three = new Mexican(staticImage, animatedImage, position4);
-            four = new Mexican(staticImage, animatedImage, position5);
+            one = new Mexican(staticImage, animatedImage, position2, 100f);
+            two = new Mexican(staticImage, animatedImage, position3, 100f);
+            three = new Mexican(staticImage, animatedImage, position4, 100f);
+            four = new Mexican(staticImage, animatedImage, position5, 100f);
 
 
             // TODO: use this.Content to load your game content here
@@ -324,7 +324,7 @@ namespace GlobalGameJam17
                     Vector2 pos5; pos5.X = 100.0f; pos5.Y = 400.0f;
 
                     mexicanWaver.Draw(gameTime, spriteBatch, pos1, SpriteEffects.None);
-                    one.drawStatic(spriteBatch);
+                    one.drawAnimation(gameTime, spriteBatch, SpriteEffects.None);
                     two.drawStatic(spriteBatch);
                     three.drawStatic(spriteBatch);
                     four.drawStatic(spriteBatch);
