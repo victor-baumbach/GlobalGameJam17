@@ -73,6 +73,10 @@ namespace GlobalGameJam17
         static Point mexicanPos4 = new Point(525, 350);
         static Point mexicanPos5 = new Point(675, 350);
 
+
+
+
+
         Rectangle position1 = new Rectangle(mexicanPos1, new Point(50));
         Rectangle position2 = new Rectangle(mexicanPos2, new Point(50));
         Rectangle position3 = new Rectangle(mexicanPos3, new Point(50));
@@ -371,6 +375,7 @@ namespace GlobalGameJam17
 
                     mexicanWaver.Draw(gameTime, spriteBatch, pos1, SpriteEffects.None);
                     one.drawAnimation(gameTime, spriteBatch, SpriteEffects.None);
+                    //one.drawStatic(spriteBatch);
                     two.drawStatic(spriteBatch);
                     three.drawStatic(spriteBatch);
                     four.drawStatic(spriteBatch);
