@@ -7,11 +7,11 @@ using Microsoft.Xna.Framework.Input;
 
 namespace GlobalGameJam17
 {
-    class Mexican
+    class LevelCharacter
     {
-        Keys key;
+        char key;
 
-        public Mexican (Keys _key)
+        public LevelCharacter (char _key)
         {
             key = _key;
         }

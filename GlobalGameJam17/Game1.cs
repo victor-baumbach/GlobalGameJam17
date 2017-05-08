@@ -37,6 +37,7 @@ namespace GlobalGameJam17
         const int levelSize = 5;
         char[] level = new char[levelSize];
         char[] user = new char[levelSize];
+        List<Level> levels = new List<Level>();
         int keyboardInputPossition = 0;
         SpriteBatch spriteBatch;
 
@@ -130,6 +131,45 @@ namespace GlobalGameJam17
             MediaPlayer.IsRepeating = true;
             MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
 
+            //some hard coded levels
+            List<char> problem = new List<char>();
+            problem.Add('A');
+            problem.Add('R');
+            problem.Add('C');
+            List<char> solution = new List<char>();
+            solution.Add('C');
+            solution.Add('A');
+            solution.Add('R');
+            Level level1 = new Level(problem, solution);
+            levels.Add(level1);
+            problem.Clear();
+            solution.Clear();
+            problem = new List<char>();
+            problem.Add('T');
+            problem.Add('A');
+            problem.Add('L');
+            problem.Add('E');
+            solution = new List<char>();
+            solution.Add('L');
+            solution.Add('A');
+            solution.Add('T');
+            solution.Add('E');
+            Level level2 = new Level(problem, solution);
+            levels.Add(level2);
+            problem = new List<char>();
+            problem.Add('D');
+            problem.Add('O');
+            problem.Add('N');
+            problem.Add('U');
+            problem.Add('S');
+            solution = new List<char>();
+            solution.Add('S');
+            solution.Add('O');
+            solution.Add('U');
+            solution.Add('N');
+            solution.Add('D');
+            Level level3 = new Level(problem, solution);
+            levels.Add(level3);
 
             graphics.ApplyChanges();
 

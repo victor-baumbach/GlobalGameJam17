@@ -4,25 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework;
 
 namespace GlobalGameJam17
 {
     class Level
     {
-        List<Mexican> mexicans = new List<Mexican>();
-        List<Keys> solution;
+        public List<LevelCharacter> mexicans = new List<LevelCharacter>();
+        List<char> solution;
 
-        public Level(List<Keys> problem, List<Keys> _solution)
+        public Level(List<char> problem, List<char> _solution)
         {
             solution = _solution;
-            foreach(Keys key in problem)
+            foreach(char key in problem)
             {
-                Mexican newMexican = new Mexican(key);
+                LevelCharacter newMexican = new LevelCharacter(key);
                 mexicans.Add(newMexican);
             }
         }
 
-        public bool isSolution(List<Keys> answer)
+        public bool isSolution(List<char> answer)
         {
             bool isEqual = true;
             if(answer.Count == solution.Count)
@@ -47,6 +48,22 @@ namespace GlobalGameJam17
                 isEqual = false;
             }
             return isEqual;
+        }
+
+        public List<Vector2> positionCalculator(float screenWidth, float screenHeight, float xOffset = 0, float yOffset = 0)
+        {
+            List<Vector2> positions = new List<Vector2>();
+            float offsetForEach = (screenWidth - 2 * xOffset) / (mexicans.Count + 1);
+            float verticleOffset = (screenHeight - 2 * yOffset) / 2;
+            for (int i = 0; i < mexicans.Count; i++)
+            {
+                Vector2 newPosition = new Vector2();
+                newPosition.X = xOffset + offsetForEach * (i + 1);
+                newPosition.Y = yOffset + verticleOffset;
+                positions.Add(newPosition);
+            }
+
+            return positions; 
         }
     }
 }
