@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<<<<<<< HEAD
   <SourceFile>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/startSignH.tga</SourceFile>
   <SourceTime>2017-05-07T13:18:36.5334776+01:00</SourceTime>
   <DestFile>C:/Users/Victor/Documents/Global Game Jam 17/GlobalGameJam17/GlobalGameJam17/Content/bin/Windows/startSignH.xnb</DestFile>
   <DestTime>2017-05-08T05:14:24.8205004+01:00</DestTime>
+=======
+  <SourceFile>C:/Users/samue/Documents/PPM/GlobalGameJam17/Content/startSignH.tga</SourceFile>
+  <SourceTime>2017-05-07T21:40:50.0598638+01:00</SourceTime>
+  <DestFile>C:/Users/samue/Documents/PPM/GlobalGameJam17/Content/bin/Windows/startSignH.xnb</DestFile>
+  <DestTime>2017-05-08T06:03:31.4480325+01:00</DestTime>
+>>>>>>> sam
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

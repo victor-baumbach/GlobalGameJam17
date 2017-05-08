@@ -40,10 +40,11 @@
   <ItemGroup>
     <Compile Include="animatedSpriteStrip.cs" />
     <Compile Include="cButton.cs" />
+    <Compile Include="Mexican.cs" />
+    <Compile Include="PreciseTimer.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="LevelCharacter.cs" />
-    <Compile Include="PreciseTimer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="spriteScenePicker.cs" />
@@ -70,7 +71,7 @@
     <Content Include="Content\PirateShip.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Surprised.png">
+    <Content Include="Content\Sprite.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\walk-right.png">
@@ -79,10 +80,6 @@
     <Content Include="Content\WaveSprite.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\exitSignH.tga">

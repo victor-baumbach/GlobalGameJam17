@@ -33,6 +33,7 @@ namespace GlobalGameJam17
             return array;
         }
 
+
         private int score = 0;
         const int levelSize = 5;
         char[] level = new char[levelSize];
@@ -49,8 +50,15 @@ namespace GlobalGameJam17
         Song song;
 
 
-         Texture2D Mexican;
         animatedSpriteStrip mexicanWaver;
+
+        Mexican one;
+        Mexican two;
+        Mexican three;
+        Mexican four;
+
+        Texture2D staticImage;
+        Texture2D animatedImage;
 
         //Screen adjustment 
         int screenWidth = 800, screenHeight = 600;
@@ -59,12 +67,17 @@ namespace GlobalGameJam17
         enum playState { viewing, inputing, winning, loosing};
         playState currentPlayState = playState.viewing;
 
-        Point mexicanPos1 = new Point(100, 300);
-        Point mexicanPos2 = new Point(200, 300);
-        Point mexicanPos3 = new Point(300, 300);
-        Point mexicanPos4 = new Point(400, 300);
-        Point mexicanPos5 = new Point(500, 300);
-        
+        static Point mexicanPos1 = new Point(75, 350);
+        static Point mexicanPos2 = new Point(225, 350);
+        static Point mexicanPos3 = new Point(375, 350);
+        static Point mexicanPos4 = new Point(525, 350);
+        static Point mexicanPos5 = new Point(675, 350);
+
+        Rectangle position1 = new Rectangle(mexicanPos1, new Point(50));
+        Rectangle position2 = new Rectangle(mexicanPos2, new Point(50));
+        Rectangle position3 = new Rectangle(mexicanPos3, new Point(50));
+        Rectangle position4 = new Rectangle(mexicanPos4, new Point(50));
+        Rectangle position5 = new Rectangle(mexicanPos5, new Point(50));
 
         cButton btnPlay;
         cButton btnExit;
@@ -109,10 +122,11 @@ namespace GlobalGameJam17
 
             Boat = Content.Load<Texture2D>("PirateShip");
             smallBoat = Content.Load<Texture2D>("BabyShip");
-            Mexican = Content.Load<Texture2D>("WaveSprite");
+            staticImage = Content.Load<Texture2D>("Sprite");
+            animatedImage = Content.Load<Texture2D>("WaveSprite");
             Title = Content.Load<Texture2D>("title");
             this.song = Content.Load<Song>("Can_Can");
-            mexicanWaver = new animatedSpriteStrip(Mexican, 0.001f, true);
+            mexicanWaver = new animatedSpriteStrip(animatedImage, 100f, false);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
 
@@ -126,6 +140,11 @@ namespace GlobalGameJam17
             btnPlay.setPosition(new Vector2(350, 500));
             btnExit= new cButton(Content.Load<Texture2D>("exitSignI"), Content.Load<Texture2D>("exitSignH"), graphics.GraphicsDevice);
             btnExit.setPosition(new Vector2(350, 525));
+            one = new Mexican(staticImage, animatedImage, position2, 100f);
+            two = new Mexican(staticImage, animatedImage, position3, 100f);
+            three = new Mexican(staticImage, animatedImage, position4, 100f);
+            four = new Mexican(staticImage, animatedImage, position5, 100f);
+
 
             // TODO: use this.Content to load your game content here
             MediaPlayer.Play(song);
@@ -296,7 +315,7 @@ namespace GlobalGameJam17
 
                     break;
             }
-            
+
             base.Update(gameTime);
         }
 
@@ -329,31 +348,33 @@ namespace GlobalGameJam17
                     pos.X = 100.0f;
                     pos.Y = 200.0f;
                     mexicanWaver.Draw(gameTime, spriteBatch, pos, SpriteEffects.None);
+                    one.drawStatic(spriteBatch);
                     switch (currentPlayState)
                     {
                         case playState.viewing:
-                            int height = Mexican.Height;
-                            Rectangle position1 = new Rectangle (mexicanPos1, new Point (50));
-                            Rectangle position2 = new Rectangle (mexicanPos2, new Point (50));
-                            Rectangle position3 = new Rectangle (mexicanPos3, new Point (50));
-                            Rectangle position4 = new Rectangle (mexicanPos4, new Point (50));
-                            Rectangle position5 = new Rectangle (mexicanPos5, new Point (50));
-                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position1, spriteScenePicker.handsInAirFrame(height));
-                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position2, spriteScenePicker.idleFrame(height));
-                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position3, spriteScenePicker.handsInAirFrame(height));
-                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position4, spriteScenePicker.idleFrame(height));
-                            spriteScenePicker.drawFrame(gameTime, spriteBatch, Mexican, position5, spriteScenePicker.handsInAirFrame(height));
+                            int height = animatedImage.Height;
+
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, animatedImage, position1, spriteScenePicker.handsInAirFrame(height));
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, animatedImage, position2, spriteScenePicker.idleFrame(height));
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, animatedImage, position3, spriteScenePicker.handsInAirFrame(height));
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, animatedImage, position4, spriteScenePicker.idleFrame(height));
+                            spriteScenePicker.drawFrame(gameTime, spriteBatch, animatedImage, position5, spriteScenePicker.handsInAirFrame(height));
 
                             break;
                     }
                     spriteBatch.Draw(Content.Load<Texture2D>("gameBackground"), new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
-                    Vector2 pos1; pos1.X = 100.0f;  pos1.Y = 400.0f;
+                    Vector2 pos1; pos1.X = 125.0f;  pos1.Y = 400.0f;
                     Vector2 pos2; pos2.X = 100.0f; pos2.Y = 400.0f;
                     Vector2 pos3; pos3.X = 100.0f; pos3.Y = 400.0f;
                     Vector2 pos4; pos4.X = 100.0f; pos4.Y = 400.0f;
                     Vector2 pos5; pos5.X = 100.0f; pos5.Y = 400.0f;
 
                     mexicanWaver.Draw(gameTime, spriteBatch, pos1, SpriteEffects.None);
+                    one.drawAnimation(gameTime, spriteBatch, SpriteEffects.None);
+                    two.drawStatic(spriteBatch);
+                    three.drawStatic(spriteBatch);
+                    four.drawStatic(spriteBatch);
+
                     spriteBatch.End();
 
                     break;
